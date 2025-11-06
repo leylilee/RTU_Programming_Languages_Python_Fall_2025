@@ -16,16 +16,29 @@ Instructions:
 """
 
 # TODO: Create the datasets - up to you to fill in the data
-temperatures = []
-city_population = {}
+temperatures = [10, 11, 12, 9, 8, 11, 9]
+city_population = {
+    "Riga": 591882,
+    "Daugavpils": 78112,
+    "Liepaja": 67398,
+    "Jelgava": 54821,
+    "Jurmala": 51933
+
+}
 
 # TODO: Compute aggregates
-average_temperature = 0
-largest_city = ""
-largest_population = 0
+average_temperature = sum(temperatures)/len(temperatures)
+
 total_population = 0
+largest_city = max(city_population, key=city_population.get)
+smallest_city = min(city_population, key=city_population.get)
+largest_population = city_population.get(largest_city)
+smallest_population = city_population.get(smallest_city)
+
+total_population = sum(city_population.values())
 
 # TODO: Print results
 print("Average temperature:", average_temperature)
 print("Largest city:", largest_city, "-", largest_population)
+print("Smallest city:", smallest_city, "-", smallest_population)
 print("Total population:", total_population)
